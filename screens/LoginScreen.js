@@ -29,8 +29,11 @@ const LoginScreen = () => {
                 style={styles.container}
                 source={{ uri: "https://tinder.com/static/tinder.png" }}
             >
-                <TouchableOpacity style={styles.touchable}>
-                    <Text style={styles.text}>Sign In & get swiping</Text>
+                <TouchableOpacity
+                    style={styles.touchable}
+                    onPress={signInWithGoogle}
+                >
+                    <Text style={styles.text}>Sign In</Text>
                 </TouchableOpacity>
             </ImageBackground>
         </View>
@@ -45,8 +48,15 @@ const styles = StyleSheet.create({
     },
     touchable: {
         position: "absolute",
-        bottom: 40,
-        width: 150,
+        bottom: 120,
+        width: 200,
+        marginHorizontal: "33%",
     },
-    text: {},
+    text: {
+        fontWeight: "bold",
+        textAlign: "center",
+        backgroundColor: "white",
+        padding: 8,
+        borderRadius: 15,
+    },
 });
