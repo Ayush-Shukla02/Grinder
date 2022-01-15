@@ -9,9 +9,12 @@ const MatchScreen = () => {
     const { loggedInProfile, userSwiped } = params;
 
     return (
-        <View style={styles.contianer}>
+        <View style={styles.container}>
             <View style={styles.matchImageContainer}>
-                <Image source={{ uri: "https://links.papareact.com/mg9" }} />
+                <Image
+                    style={styles.matchImage}
+                    source={{ uri: "https://links.papareact.com/mg9" }}
+                />
             </View>
 
             <Text style={styles.matchText}>
@@ -48,38 +51,38 @@ const styles = StyleSheet.create({
     container: {
         height: "100%",
         backgroundColor: "rgb(239, 68, 68)",
-        paddingTop: 50,
+        paddingTop: 70,
         opacity: 0.89,
     },
     matchImageContainer: {
         justifyContent: "center",
-        paddingHorizontal: 20,
-        paddingTop: 40,
+        paddingHorizontal: 30,
+        paddingTop: 50,
     },
     matchImage: {
-        height: 50,
+        height: 85,
         width: "100%",
     },
     matchText: {
         color: "white",
         textAlign: "center",
-        marginTop: 20,
+        marginTop: 40,
     },
     imageContainer: {
         flexDirection: "row",
         justifyContent: "space-evenly",
-        marginTop: 20,
+        marginTop: 60,
     },
     image: {
-        height: 100,
-        width: 100,
+        height: 110,
+        width: 110,
         borderRadius: 50,
     },
     touchable: {
         backgroundColor: "white",
-        margin: 20,
-        paddingHorizontal: 40,
-        borderRadius: 50,
-        marginTop: 30,
+        margin: 100,
+        padding: 10,
+        borderRadius: 30,
+        marginTop: 70,
     },
 });

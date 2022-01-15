@@ -27,34 +27,34 @@ import {
 import { db } from "../firebase";
 import generateId from "../lib/generateId";
 
-const DUMMY_DATA = [
-    {
-        firstname: "Ananjan",
-        lastname: "Thakur",
-        job: "Student",
-        photoURL: "https://img.wattpad.com/cover/89571494-288-k960879.jpg",
-        age: "19",
-        id: 123,
-    },
-    {
-        firstname: "Shivral",
-        lastname: "Somani",
-        job: "Student",
-        photoURL:
-            "https://www.randomanimestuff.com/wp-content/uploads/2020/07/Itachi-Uchiha-Naruto.jpg",
-        age: "19",
-        id: 456,
-    },
-    {
-        firstname: "Siddhant",
-        lastname: "Singhania",
-        job: "Student",
-        photoURL:
-            "https://bracketfights.com/images/templates/2019/18399/random-male-anime-character-badass-husbando--18399/74cc22e844154ee6af22bed92034b524jpg.png",
-        age: "19",
-        id: 789,
-    },
-];
+// const DUMMY_DATA = [
+//     {
+//         firstname: "Ananjan",
+//         lastname: "Thakur",
+//         job: "Student",
+//         photoURL: "https://img.wattpad.com/cover/89571494-288-k960879.jpg",
+//         age: "19",
+//         id: 123,
+//     },
+//     {
+//         firstname: "Shivral",
+//         lastname: "Somani",
+//         job: "Student",
+//         photoURL:
+//             "https://www.randomanimestuff.com/wp-content/uploads/2020/07/Itachi-Uchiha-Naruto.jpg",
+//         age: "19",
+//         id: 456,
+//     },
+//     {
+//         firstname: "Siddhant",
+//         lastname: "Singhania",
+//         job: "Student",
+//         photoURL:
+//             "https://bracketfights.com/images/templates/2019/18399/random-male-anime-character-badass-husbando--18399/74cc22e844154ee6af22bed92034b524jpg.png",
+//         age: "19",
+//         id: 789,
+//     },
+// ];
 
 const HomeScreen = () => {
     const navigation = useNavigation();
@@ -120,12 +120,11 @@ const HomeScreen = () => {
         setDoc(doc(db, "users", user.uid, "passes", userSwiped.id), userSwiped);
     };
 
-    const swipeRight = (cardIndex) => {
+    const swipeRight = async (cardIndex) => {
         if (!profiles[cardIndex]) return;
 
         const userSwiped = profiles[cardIndex];
-
-        const loggedInProfile = await(
+        const loggedInProfile = await (
             await getDoc(doc(db, "users", user.uid))
         ).data();
 
@@ -133,7 +132,7 @@ const HomeScreen = () => {
             (documentSnapshot) => {
                 if (documentSnapshot.exists()) {
                     console.log(
-                        `HOORAY, You matched with ${userSwiped.displayName}`
+                        `HOORAY! You matched with ${userSwiped.displayName}`
                     );
 
                     setDoc(
@@ -152,15 +151,13 @@ const HomeScreen = () => {
                             timestamp: serverTimestamp(),
                         }
                     );
+
                     navigation.navigate("Match", {
                         loggedInProfile,
                         userSwiped,
                     });
                 } else {
-                    console.log(
-                        `You swiped on ${userSwiped.displayName} (${userSwiped.job})`
-                    );
-
+                    console.log(`You swiped on ${userSwiped.displayName}`);
                     setDoc(
                         doc(db, "users", user.uid, "swipes", userSwiped.id),
                         userSwiped
@@ -172,6 +169,7 @@ const HomeScreen = () => {
         console.log(
             `You swiped on ${userSwiped.displayName} (${userSwiped.job})`
         );
+
         setDoc(doc(db, "users", user.uid, "swipes", userSwiped.id), userSwiped);
     };
 
@@ -333,7 +331,7 @@ const styles = StyleSheet.create({
     card: {
         position: "relative",
         backgroundColor: "white",
-        height: "75%",
+        height: "77%",
         borderRadius: 25,
     },
     cardImage: {
