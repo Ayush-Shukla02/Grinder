@@ -85,7 +85,7 @@ const MessageScreen = () => {
                         style={{ paddingLeft: 15 }}
                         keyExtractor={(item) => item.id}
                         renderItem={({ item: message }) =>
-                            messages.userId === user.uid ? (
+                            message.userId === user.uid ? (
                                 <SenderMessage
                                     key={message.id}
                                     message={message}
