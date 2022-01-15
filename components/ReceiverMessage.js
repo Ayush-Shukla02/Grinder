@@ -4,7 +4,7 @@ import { Image, StyleSheet, Text, View } from "react-native";
 const ReceiverMessage = ({ message }) => {
     return (
         <View style={styles.container}>
-            <Image style={styles.image} srouce={{ uri: message.photoURL }} />
+            <Image style={styles.image} source={{ uri: message.photoURL }} />
             <Text style={styles.messageContainer}>{message.message}</Text>
         </View>
     );
@@ -22,17 +22,17 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         marginVertical: 5,
         alignSelf: "flex-start",
-        marginLeft: 20,
+        marginLeft: 35,
     },
     messageContainer: {
         color: "white",
     },
     image: {
-        height: 40,
-        width: 40,
+        height: 30,
+        width: 30,
         borderRadius: 50,
         position: "absolute",
         marginTop: 0,
-        marginLeft: -20,
+        marginLeft: -34,
     },
 });
