@@ -3,7 +3,6 @@ import React, { useLayoutEffect } from "react";
 import {
     View,
     Text,
-    Button,
     ImageBackground,
     TouchableOpacity,
     StyleSheet,

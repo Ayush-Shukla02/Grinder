@@ -46,9 +46,6 @@ const ChatList = () => {
 export default ChatList;
 
 const styles = StyleSheet.create({
-    container: {
-        // flex: 1,
-    },
     noChatText: {
         textAlign: "center",
         fontSize: 20,

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, SafeAreaView } from "react-native";
+import { SafeAreaView } from "react-native";
 import ChatList from "../components/ChatList";
 import Header from "../components/Header";
 
@@ -13,5 +13,3 @@ const ChatScreen = () => {
 };
 
 export default ChatScreen;
-
-const styles = StyleSheet.create({});
