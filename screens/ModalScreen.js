@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import { doc, serverTimestamp, setDoc } from "firebase/firestore";
-import React, { useLayoutEffect, useState } from "react";
+import React, { useState } from "react";
 import {
     Image,
     StatusBar,

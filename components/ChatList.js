@@ -27,8 +27,6 @@ const ChatList = () => {
         [user]
     );
 
-    console.log(matches);
-
     return matches.length > 0 ? (
         <FlatList
             style={{ height: "100%" }}

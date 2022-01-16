@@ -85,8 +85,6 @@ const HomeScreen = () => {
 
         const userSwiped = profiles[cardIndex];
 
-        console.log(`You swiped PASS on ${userSwiped.displayName}`);
-
         setDoc(doc(db, "users", user.uid, "passes", userSwiped.id), userSwiped);
     };
 
@@ -101,10 +99,6 @@ const HomeScreen = () => {
         getDoc(doc(db, "users", userSwiped.id, "swipes", user.uid)).then(
             (documentSnapshot) => {
                 if (documentSnapshot.exists()) {
-                    console.log(
-                        `HOORAY! You matched with ${userSwiped.displayName}`
-                    );
-
                     setDoc(
                         doc(db, "users", user.uid, "swipes", userSwiped.id),
                         userSwiped
@@ -127,17 +121,12 @@ const HomeScreen = () => {
                         userSwiped,
                     });
                 } else {
-                    console.log(`You swiped on ${userSwiped.displayName}`);
                     setDoc(
                         doc(db, "users", user.uid, "swipes", userSwiped.id),
                         userSwiped
                     );
                 }
             }
-        );
-
-        console.log(
-            `You swiped on ${userSwiped.displayName} (${userSwiped.job})`
         );
 
         setDoc(doc(db, "users", user.uid, "swipes", userSwiped.id), userSwiped);
@@ -181,11 +170,9 @@ const HomeScreen = () => {
                     animateCardOpacity
                     verticalSwipe={false}
                     onSwipedLeft={(cardIndex) => {
-                        console.log("Swipe PASS");
                         swipeLeft(cardIndex);
                     }}
                     onSwipedRight={(cardIndex) => {
-                        console.log("Swipe MATCH");
                         swipeRight(cardIndex);
                     }}
                     backgroundColor="#4FD0E9"
