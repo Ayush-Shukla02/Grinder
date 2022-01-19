@@ -1,6 +1,6 @@
-# Grinder
+# Tinder-Clone
 
-A Tinder Clone App for both IOS and Android.
+App for both IOS and Android.
 
 ### Technologies Used
 
